@@ -16,6 +16,9 @@ export class DetailPage implements OnInit {
       console.log(params);
       console.log('Contacts in service:');
       console.log(this.contactService.contacts);
+
+      let selectedContact = this.contactService.getFromIdValue(params.accountId);
+      console.log(selectedContact);
     });
   }
 
