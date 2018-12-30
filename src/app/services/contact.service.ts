@@ -5,7 +5,20 @@ import { Injectable } from '@angular/core';
 })
 export class ContactService {
 
-  contacts;
+  contacts = [];
 
   constructor() { }
+
+  getFromIdValue( idValue:string ) {
+    let result = this.contacts.find((contact)=>{
+      let source = contact.id.name + contact.id.value;
+      console.log(source + ", " + idValue);
+      if(source === idValue){
+        return true;
+      }
+      return false;
+    });
+
+    return result;
+  }
 }
